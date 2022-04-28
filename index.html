@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Portfolio</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+			integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							pink: {
+								100: "#490149",
+								// 200: '#a5f3fc',
+								// 300: '#67e8f9',
+								// 400: '#22d3ee',
+								// 500: '#06b6d4',
+								// 600: '#0891b2',
+								// 700: '#0e7490',
+								// 800: '#155e75',
+								// 900: '#164e63',
+							},
+							fuchsia: "#ff00ff",
+						},
+					},
+				},
+			};
+			     /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+		</script>
+	</head>
+	<body>
+		<header class="">
+			<nav class="p-5">
+				<div class="brand">Tamara</div>
+				<div class="topnav" id="myTopnav">
+					<ul>
+						<li><a href="#home" class="active">Home</a></li>
+						<li><a href="#about">about</a></li>
+						<li><a href="#projects">works</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<div class="dropdown">
+					  <button class="dropbtn">Menu
+						<i class="fa fa-caret-down"></i>
+					  </button>
+					  <div class="dropdown-content">
+						<!-- <a href="#">Link 1</a>
+						<a href="#">Link 2</a>
+						<a href="#">Link 3</a> -->
+						<a href="#home" class="active">Home</a>
+					<a href="#about">About</a>
+					<a href="#projects">works</a>
+					<a href="#contact">Contact</a>
+					  </div>
+					</div>
+					<!-- <a href="#home" class="active">Home</a>
+					<a href="#about">About</a>
+					<a href="#projects">works</a>
+					<a href="#contact">Contact</a> -->
+					<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+				  </div>
+			</nav>
+			<!-- <nav class="">
+				<div id="brand">
+					<h1>Porfolio</h1>
+				</div>
+				<ul class="flex space-x-5">
+					<li><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#projects">Works</a></li>
+					<li><a href="#contacts">Contact</a></li>
+				</ul>
+			</nav> -->
+			<div
+				class="text-white space-y-2 grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center place-content-center"
+				id="text-box-head"
+			>
+				<div class="space-y-2 md:col-span-2">
+					<h5 class="text-base uppercase" id="hello">&#8212; Hello there</h5>
+					<h1 class="text-3xl md:text-5xl">I am Tamarapreye</h1>
+					<h1 class="text-3xl md:text-5xl">I am a Web Developer</h1>
+					
+				</div>
+				<div class="space-y-2 justify-self-start md:col-span-1 mx-10 md:mx-5">
+					<a href="#projects" class="block">
+						<button
+							class="uppercase font-semibold text-sm py-3 px-5 border-solid border-2 border-white hover:bg-fuchsia hover:text-white hover:border-fuchsia active:bg-fuchsia active:ring focus:outline-none focus:ring focus:ring-pink-100"
+						>
+							latest projects
+						</button>
+					</a>
+					<a href="#projects" class="block">
+						<button
+							class="uppercase font-semibold text-sm py-3 px-5 border-solid border-2 border-white hover:bg-fuchsia hover:text-white hover:border-fuchsia active:bg-fuchsia active:ring focus:outline-none focus:ring focus:ring-pink-100"
+						>
+							more about me
+						</button>
+					</a>
+				</div>
+				<!-- <p class="justify-self-end align-">scroll down</p> -->
+			</div>
+		</header>
+
+		<main>
+			<section id="about" class="md:grid md:columns-3 md:justify-items-evenly space-y-8 p-5">
+				<div class="md:col-span-3 md:justify-self-center text-center space-y-5">
+					<h6 class="text-lg md:text-2xl uppercase">about</h6>
+					<h1 class="text-4xl capitalize md:text-6xl">personal info</h1>
+					<p class="text-base">Get to know more about me</p>
+					<hr />
+				</div>
+				<div class="space-y-2 md:w-80 md:justify-self-center">
+					<h1 class="md:mt-8">Hello</h1>
+					<p class="">
+						My name is Tamarapreye and I am a passionate Frontend Web Developer
+						using web technologies to build amazing products and focusing on
+						solving problems for different niches and different industries,
+						using the power of technology.
+					</p>
+					<p class="">
+						I will love to hear from you, whether it is a project, job,
+						opportunity or just to chat. Feel free to contact me
+					</p>
+				</div>
+				<div class="md:w-90 md:justify-self-end">
+					<h1 class="md:mt-8">Skills</h1>
+					<div>
+						<span>HTML</span>
+						<span>CSS</span>
+						<span>BOOTSTRAP</span>
+						<span>TAILWIND</span>
+						<span>GIT</span>
+					</div>
+				</div>
+			</section>
+			<section id="projects"></section>
+		</main>
+		<footer>
+			<!-- <div>
+				<h4>contact</h4>
+				<h1>say hello.</h1>
+				<p>
+					Submit the form below so I can get back to you as soon as possible
+				</p>
+				<div id="form"></div>
+				<div id="contacts"></div>
+			</div> -->
+		</footer>
+	</body>
+</html>
