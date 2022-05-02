@@ -9,8 +9,24 @@ header{
     height: 80%;
 }
 #hello{
-    color: #ff00ff;
+    color: #ff00c8;
     /* color: #490149; */
+}
+#span-div p{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_3KjvGCEiXW0pitGfT4tQXxwDEgeOcOVOA&usqp=CAU");
+background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    padding: 0.3rem 0.5rem;
+    margin: 0.2rem 0rem;
+}
+#projects{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_3KjvGCEiXW0pitGfT4tQXxwDEgeOcOVOA&usqp=CAU");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
 }
 nav{
     display: flex;
@@ -44,7 +60,7 @@ nav ul li{
   
   /* Add an active class to highlight the current page */
   .active {
-    background-color: #04AA6D;
+    background-color: #ff00ff;
     color: white;
   }
   
