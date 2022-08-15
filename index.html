@@ -21,6 +21,38 @@
 			referrerpolicy="no-referrer"
 		/>
 		<link rel="stylesheet" href="./style.css" />
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		></script>
+		<script type="text/javascript">
+			(function () {
+				// https://dashboard.emailjs.com/admin/account
+				emailjs.init("PbO5pOggPPftcmk3b");
+			})();
+		</script>
+		<script type="text/javascript">
+			window.onload = function () {
+				document
+					.getElementById("form")
+					.addEventListener("submit", function (event) {
+						event.preventDefault();
+						// generate a five digit number for the contact_number variable
+						// this.contact_number.value = (Math.random() * 100000) | 0;
+						// these IDs from the previous steps
+						emailjs.sendForm("contact_service", "contact_form", "form").then(
+							
+							function () {
+								console.log("SUCCESS!");
+								alert("Message sent successfully");
+							},
+							function (error) {
+								console.log("FAILED...", error);
+							}
+						);
+					});
+			};
+		</script>
 		<script>
 			tailwind.config = {
 				theme: {
@@ -179,7 +211,11 @@
 				</div>
 			</section>
 			<section id="projects" class="bg-grey py-8">
-				<h6 class="text-center uppercase text-fuchsia font-semibold text-lg mb-2">works</h6>
+				<h6
+					class="text-center uppercase text-fuchsia font-semibold text-lg mb-2"
+				>
+					works
+				</h6>
 				<h1 class="text-center text-4xl capitalize md:text-6xl mb-2">
 					latest projects
 				</h1>
@@ -236,7 +272,8 @@
 
 						<h4 class="font-semibold text-xl">Publish house.</h4>
 						<p class="my-3 px-1">
-							The landing page of a book/magaxine store where readers can create an account, add to their cart and purchase items.
+							The landing page of a book/magaxine store where readers can create
+							an account, add to their cart and purchase items.
 						</p>
 						<a href="https://publish-main.netlify.app/">
 							<button
@@ -255,7 +292,8 @@
 
 						<h4 class="font-semibold text-xl">My Portfolio</h4>
 						<p class="my-3 px-1">
-							The Portfolio of Tamarapreye Michael, a frontend developer. It higghlights her recent projects and means of contacting her.
+							The Portfolio of Tamarapreye Michael, a frontend developer. It
+							higghlights her recent projects and means of contacting her.
 						</p>
 						<a href="https://tamara-portfolio.netlify.app/">
 							<button
@@ -281,36 +319,45 @@
 					class="md:grid md:grid-cols-2 md:justify-items-center space-y-5 md:space-y-0"
 				>
 					<div id="form" class="w-80 md:justify-self-end">
-						<form action="get" class="space-y-8">
+						<form
+							class="space-y-8"
+							onsubmit="sendEmail(); reset(); return false;"
+						>
 							<input
 								type="text"
-								name="fullName"
+								id="name"
+								name="name"
 								placeholder="Name"
 								class="w-full bg-black"
 							/>
 							<br />
 							<input
 								type="email"
-								name="emailAddress"
+								id="email"
+								name="email"
 								placeholder="Email"
 								class="w-full bg-black"
 							/>
 							<br />
 							<input
 								type="text"
+								id="subject"
 								name="subject"
 								placeholder="Subject"
 								class="w-full bg-black"
 							/>
 							<br />
-							<input
+							<textarea
 								type="text"
+								id="message"
 								name="message"
 								placeholder="Message"
 								class="w-full bg-black"
-							/>
+								rows="3"
+							></textarea>
 							<button
 								type="submit"
+								id="submit"
 								class="uppercase font-semibold text-sm mt-2 py-2 px-8 border-solid border-2 border-white hover:bg-fuchsia hover:text-white hover:border-fuchsia active:bg-fuchsia active:ring focus:outline-none focus:ring focus:ring-pink-100"
 							>
 								Submit
@@ -351,5 +398,20 @@
 				</div>
 			</div>
 		</footer>
+		<!-- <script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+		></script> -->
+
+		<!-- <script src="app.js"> </script> -->
+		<!-- <script>
+			
+		</script>
+		<script>
+			
+		</script> -->
+
+		<!-- <script src=" https://smtpjs.com/v3/smtp.js"></script>
+		<script src="app.js"></script> -->
 	</body>
 </html>
