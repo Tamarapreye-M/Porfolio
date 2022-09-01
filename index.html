@@ -21,6 +21,8 @@
 			referrerpolicy="no-referrer"
 		/>
 		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./mobile.css">
+		<script src="./app.js" defer></script>
 		<script
 			type="text/javascript"
 			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
@@ -88,50 +90,30 @@
 	</head>
 	<body>
 		<header class="">
-			<nav class="p-5">
-				<div class="brand">Tamara</div>
+			<nav class="px-4 nav">
+				<div class="brand text-3xl lg:mx-7">Tamara</div>
+
+
+				<button class="mobile-nav-toggle" 
+				aria-controls="primary-navigation" aria-expanded="false"> 
+					<span class="sr-only"> Menu</span>
+				</button>
+
+
 				<div class="topnav" id="myTopnav">
-					<ul>
-						<li><a href="#home" class="active">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#projects">Works</a></li>
-						<li><a href="#contact">Contacts</a></li>
+					<ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+						<li><a href="./index.html" class="active mx-3 lg:mx-5  lg:text-2xl text-xl">Home</a></li>
+						<li><a href="#about" class="mx-3 lg:mx-5 lg:text-2xl text-xl">About</a></li>
+						<li><a href="#projects" class="mx-3 lg:mx-5 lg:text-2xl text-xl">Works</a></li>
+						<li><a href="#contacts" class="md:mx-3 lg:mx-5 sm:mx-3 lg:text-2xl text-xl">Contacts</a></li>
 					</ul>
-					<div class="dropdown">
-						<button class="dropbtn">
-							Menu
-							<i class="fa fa-caret-down"></i>
-						</button>
-						<div class="dropdown-content">
-							<!-- <a href="#">Link 1</a>
-						<a href="#">Link 2</a>
-						<a href="#">Link 3</a> -->
-							<a href="#home" class="active">Home</a>
-							<a href="#about">About</a>
-							<a href="#projects">Works</a>
-							<a href="#contact">Contact</a>
+					
 						</div>
 					</div>
-					<!-- <a href="#home" class="active">Home</a>
-					<a href="#about">About</a>
-					<a href="#projects">works</a>
-					<a href="#contact">Contact</a> -->
-					<a href="javascript:void(0);" class="icon" onclick="myFunction()"
-						>&#9776;</a
-					>
+					
 				</div>
 			</nav>
-			<!-- <nav class="">
-				<div id="brand">
-					<h1>Porfolio</h1>
-				</div>
-				<ul class="flex space-x-5">
-					<li><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#projects">Works</a></li>
-					<li><a href="#contacts">Contact</a></li>
-				</ul>
-			</nav> -->
+			
 			<div
 				class="text-white space-y-2 grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center place-content-center"
 				id="text-box-head"
