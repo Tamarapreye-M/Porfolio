@@ -7,6 +7,11 @@
 		<title>My Portfolio</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link
+			rel="shortcut icon"
+			href="./Images/portfolio-favicon.png"
+			type="image/x-icon"
+		/>
+		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
 			integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
@@ -20,9 +25,16 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<!-- <link
+    		rel="stylesheet"
+    		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  		/> -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		/>
 		<link rel="stylesheet" href="./style.css" />
-		<link rel="stylesheet" href="./mobile.css">
-		<script src="./app.js" defer></script>
+		<link rel="stylesheet" href="./mobile.css" />
 		<script
 			type="text/javascript"
 			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
@@ -39,11 +51,7 @@
 					.getElementById("form")
 					.addEventListener("submit", function (event) {
 						event.preventDefault();
-						// generate a five digit number for the contact_number variable
-						// this.contact_number.value = (Math.random() * 100000) | 0;
-						// these IDs from the previous steps
 						emailjs.sendForm("contact_service", "contact_form", "form").then(
-							
 							function () {
 								console.log("SUCCESS!");
 								alert("Message sent successfully");
@@ -62,14 +70,6 @@
 						colors: {
 							pink: {
 								100: "#490149",
-								// 200: '#a5f3fc',
-								// 300: '#67e8f9',
-								// 400: '#22d3ee',
-								// 500: '#06b6d4',
-								// 600: '#0891b2',
-								// 700: '#0e7490',
-								// 800: '#155e75',
-								// 900: '#164e63',
 							},
 							fuchsia: "#ff00c8",
 							grey: "rgb(141, 141, 141)",
@@ -79,7 +79,7 @@
 			};
 			/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 			function myFunction() {
-				var x = document.getElementById("myTopnav");
+				let x = document.getElementById("myTopnav");
 				if (x.className === "topnav") {
 					x.className += " responsive";
 				} else {
@@ -89,37 +89,74 @@
 		</script>
 	</head>
 	<body>
-		<header class="">
-			<nav class="px-4 nav fixed right-0 left-0 top-5">
-				<div class="brand text-3xl lg:mx-7">Tamara</div>
-
-
-				<button class="mobile-nav-toggle" 
-				aria-controls="primary-navigation" aria-expanded="false"> 
-					<span class="sr-only"> Menu</span>
-				</button>
-
+		<header class="header">
+			<nav
+				class="px-4 py-0 nav fixed right-0 left-0 top-0 my-nav z-50"
+				id="mynav"
+			>
+				<div class="mobile-nav my-nav">
+					<div class="brand text-3xl lg:mx-7 relative z-50 w-[35%]">
+						<img class="w-full" src="./Images/portfolio-logo.png" alt="" />
+					</div>
+					<button
+						class="mobile-nav-toggle"
+						aria-controls="primary-navigation"
+						aria-expanded="false"
+					>
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="sr-only"> Menu</span>
+					</button>
+				</div>
 
 				<div class="topnav" id="myTopnav">
-					<ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
-						<li><a href="./index.html" class="active mx-3 lg:mx-5  lg:text-2xl text-xl">Home</a></li>
-						<li><a href="#about" class="mx-3 lg:mx-5 lg:text-2xl text-xl">About</a></li>
-						<li><a href="#projects" class="mx-3 lg:mx-5 lg:text-2xl text-xl">Works</a></li>
-						<li><a href="#contacts" class="md:mx-3 lg:mx-5 sm:mx-3 lg:text-2xl text-xl">Contacts</a></li>
+					<ul
+						id="primary-navigation"
+						data-visible="false"
+						class="primary-navigation flex"
+					>
+						<li>
+							<a
+								href="./index.html"
+								class="active mx-3 lg:mx-5 lg:text-2xl text-xl nav-link"
+								>Home</a
+							>
+						</li>
+						<li>
+							<a href="#about" class="mx-3 lg:mx-5 lg:text-2xl text-xl nav-link"
+								>About</a
+							>
+						</li>
+						<li>
+							<a
+								href="#projects"
+								class="mx-3 lg:mx-5 lg:text-2xl text-xl nav-link"
+								>Works</a
+							>
+						</li>
+						<li>
+							<a
+								href="#contacts"
+								class="md:mx-3 lg:mx-5 sm:mx-3 lg:text-2xl text-xl nav-link"
+								>Contacts</a
+							>
+						</li>
 					</ul>
-					
-						</div>
-					</div>
-					
 				</div>
 			</nav>
-			
+
 			<div
-				class="text-white space-y-2 grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center place-content-center"
+				class="animate__animated text-white space-y-2 grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center place-content-center"
 				id="text-box-head"
 			>
-				<div class="space-y-2 md:col-span-2">
-					<h5 class="text-base uppercase" id="hello">&#8212; Hello there</h5>
+				<div class="space-y-2 md:col-span-2 relative z-10">
+					<h5
+						class="text-base uppercase z-10 animate__animated animate__bounce"
+						id="hello"
+					>
+						&#8212; Hello there
+					</h5>
 					<h1 class="text-3xl md:text-5xl">I am Tamarapreye</h1>
 					<h1 class="text-3xl md:text-5xl">I am a Web Developer</h1>
 				</div>
@@ -146,17 +183,25 @@
 		<main>
 			<section id="about" class="md:grid space-y-8 p-5 md:py-8 md:my-5">
 				<div class="md:justify-self-center text-center space-y-5">
-					<h6 class="text-lg md:text-2xl uppercase text-fuchsia font-semibold">
-						about
-					</h6>
-					<h1 class="text-4xl capitalize md:text-6xl">personal info</h1>
-					<p class="text-base font-semibold">Get to know more about me</p>
+					<div class="relative z-10">
+						<h6
+							id="about-header"
+							class="text-lg md:text-2xl uppercase text-fuchsia font-semibold"
+						>
+							about
+						</h6>
+						<h1 class="text-4xl capitalize md:text-6xl">personal info</h1>
+						<p class="text-base font-semibold">Get to know more about me</p>
+					</div>
 					<hr />
 				</div>
 				<div
-					class="space-y-5 md:space-y-0 md:grid md:grid-cols-3 md:justify-items-center md:place-content-center"
+					class="space-y-5 relative z-10 md:space-y-0 md:grid md:grid-cols-3 md:justify-items-center md:place-content-center"
 				>
-					<div class="space-y-2 md:w-2/3 md:justify-self-end md:col-span-2">
+					<div
+						class="space-y-2 md:w-2/3 md:justify-self-end md:col-span-2"
+						id="about-description"
+					>
 						<h1 class="md:mt-8 text-xl font-semibold uppercase">Hello!</h1>
 						<p class="md:w-2/3">
 							My name is Tamarapreye Michael and I am a passionate Frontend Web
@@ -182,9 +227,7 @@
 						<a
 							href="https://drive.google.com/file/d/1qjXzEN0sXASTRACVyYvP7gafKnmKjhQs/view?usp=share_link"
 							class="block"
-							download="Tamarapreye_Michael_CV.pdf"
 							target="_blank"
-							
 						>
 							<button
 								class="uppercase font-semibold text-sm mt-2 py-3 px-5 border-solid border-2 border-black hover:bg-fuchsia hover:text-white hover:border-fuchsia active:bg-fuchsia active:ring focus:outline-none focus:ring focus:ring-pink-100"
@@ -195,33 +238,39 @@
 					</div>
 				</div>
 			</section>
-			<section id="projects" class="bg-grey py-8">
-				<h6
-					class="text-center uppercase text-fuchsia font-semibold text-lg mb-2"
-				>
-					works
-				</h6>
-				<h1 class="text-center text-4xl capitalize md:text-6xl mb-2">
-					latest projects
-				</h1>
-				<p class="text-center mt-3 mb-8 text-base font-semibold">
-					Here you can find some of the latest projects that I have worked.
-				</p>
+			<section id="projects" class="bg-grey py-8 relative z-10">
+				<div id="projects-header">
+					<h6
+						class="text-center uppercase text-fuchsia font-semibold text-lg mb-2"
+						id=""
+					>
+						works
+					</h6>
+					<h1 class="text-center text-4xl capitalize md:text-6xl mb-2">
+						latest projects
+					</h1>
+					<p class="text-center mt-3 mb-8 text-base font-semibold">
+						Here you can find some of the latest projects that I have worked.
+					</p>
+				</div>
 				<div
 					class="grid md:grid-cols-2 justify-items-center w-full space-y-5 md:space-y-0 md:gap-10"
 				>
-					<div class="w-80 text-center bg-white px-3 pb-3 md:justify-self-end">
+					<div
+						class="w-80 text-center bg-white px-3 pb-3 md:justify-self-end project-card"
+					>
 						<div>
-							<img class="w-full" src="./Images/CC Mockup.png" alt="" />
+							<img class="w-full" src="./Images/lvcu_mockup.png" alt="" />
 						</div>
 
-						<h4 class="font-semibold text-xl">Connect Care</h4>
+						<h4 class="font-semibold text-xl">TFT Devotional App</h4>
 						<p class="my-3 px-1">
-							A website that serves as a link between patients and pharmacists,
-							where patients can find drugs with their doctor's priscription and
-							buy the available drugs
+							A multipaged website app built with react.js, tailwind css and
+							firebase for a Christian body that is specific for reading
+							devotional articles everyday. It also has a persisting dark theme
+							feature is implemented.
 						</p>
-						<a href="https://connect-care.netlify.app/" target="_blank">
+						<a href="https://main--lvcu-tft.netlify.app" target="_blank">
 							<button
 								class="bg-fuchsia text-white w-full border-solid border-3 border-fuchsia my-3 py-2"
 							>
@@ -230,6 +279,27 @@
 						</a>
 					</div>
 					<div
+						class="w-80 text-center bg-white px-3 pb-3 md:justify-self-start project-card"
+					>
+						<div>
+							<img class="w-full" src="./Images/todo-app_mockup.png" alt="" />
+						</div>
+
+						<h4 class="font-semibold text-xl">Todo App</h4>
+						<p class="my-3 px-1">
+							A todo list web app that keeps track of todo list, with features
+							that enables it to be marked complete, deleted can be filtered
+							according to tags with a persisting dark mode feature implemented
+						</p>
+						<a href="https://tamara-todo-app.netlify.app/" target="_blank">
+							<button
+								class="bg-fuchsia text-white w-full border-solid border-3 border-fuchsia my-3 py-2"
+							>
+								VIEW LIVE
+							</button>
+						</a>
+					</div>
+					<!-- <div
 						class="w-80 text-center bg-white px-3 pb-3 md:justify-self-start"
 					>
 						<div>
@@ -248,15 +318,18 @@
 								VIEW LIVE
 							</button>
 						</a>
-					</div>
-					<div class="w-80 text-center bg-white px-3 pb-3 md:justify-self-end">
+					</div> -->
+					<div
+						class="w-80 text-center bg-white px-3 pb-3 md:justify-self-end project-card"
+					>
 						<div>
-							<img class="w-full" src="./Images/publish-mockup.png" alt="" />
+							<img class="w-full" src="./Images/loki_mockup.png" alt="" />
 						</div>
 
 						<h4 class="font-semibold text-xl">Loki Restaurant</h4>
 						<p class="my-3 px-1">
-							A multipage japanese restaurant website that provides information about the restaurant, their menu and contact details
+							A multipage japanese restaurant website that provides information
+							about the restaurant, their menu and contact details
 						</p>
 						<a href="https://loki-restaurant.netlify.app/" target="_blank">
 							<button
@@ -267,7 +340,7 @@
 						</a>
 					</div>
 					<div
-						class="w-80 text-center bg-white px-3 pb-3 md:justify-self-start"
+						class="w-80 text-center bg-white px-3 pb-3 md:justify-self-start project-card"
 					>
 						<div>
 							<img class="w-full" src="./Images/portfolio-mockup.png" alt="" />
@@ -290,14 +363,18 @@
 			</section>
 		</main>
 		<footer class="text-white bg-black p-5">
-			<div>
-				<h4 class="text-center uppercase text-fuchsia font-semibold">
-					contact
-				</h4>
-				<h1 class="text-center text-4xl capitalize md:text-6xl">say hello.</h1>
-				<p class="text-center mt-3 mb-8 text-base">
-					Submit the form below so I can get back to you as soon as possible
-				</p>
+			<div class="relative z-10">
+				<div id="contact-header">
+					<h4 class="text-center uppercase text-fuchsia font-semibold">
+						contact
+					</h4>
+					<h1 class="text-center text-4xl capitalize md:text-6xl">
+						say hello.
+					</h1>
+					<p class="text-center mt-3 mb-8 text-base">
+						Submit the form below so I can get back to you as soon as possible
+					</p>
+				</div>
 				<div
 					class="md:grid md:grid-cols-2 md:justify-items-center space-y-5 md:space-y-0"
 				>
@@ -347,39 +424,46 @@
 							</button>
 						</form>
 					</div>
-					<div id="contacts" class="md:justify-self-center">
-						<div class="mb-4">
-							<h4 class="text-xl font-semibold">Phone</h4>
-							<p>+2349030892939</p>
-						</div>
-						<div class="mb-4">
-							<h4 class="text-xl font-semibold">Email</h4>
-							<p>preyemichael116@gmail.com</p>
-						</div>
-						<div class="mb-4">
-							<h4 class="text-xl font-semibold">Addresss</h4>
-							<p>Lagos, Nigeria</p>
-						</div>
-						<div class="space-x-4 mt-10">
-							<a
-								href="https://twitter.com/Tamara_fav?t=s4fFTVDDjJr7hvCL2Wg9eA&s=09"
-							>
-								<i class="fa-brands fa-twitter hover:text-fuchsia text-2xl"></i>
-							</a>
-							<a
-								href="https://www.linkedin.com/in/tamarapreye-michael-313877149"
-							>
-								<i
-									class="fa-brands fa-linkedin hover:text-fuchsia text-2xl"
-								></i>
-							</a>
-							<a href="https://github.com/Tamarapreye-M">
-								<i class="fa-brands fa-github hover:text-fuchsia text-2xl"></i>
-							</a>
+					<div id="contacts" class="md:justify-self-center relative z-10">
+						<div id="contact-content">
+							<div class="mb-4">
+								<h4 class="text-xl font-semibold">Phone</h4>
+								<p>+2349030892939</p>
+							</div>
+							<div class="mb-4">
+								<h4 class="text-xl font-semibold">Email</h4>
+								<p>preyemichael116@gmail.com</p>
+							</div>
+							<div class="mb-4">
+								<h4 class="text-xl font-semibold">Addresss</h4>
+								<p>Lagos, Nigeria</p>
+							</div>
+							<div class="space-x-4 mt-10">
+								<a
+									href="https://twitter.com/Tamara_fav?t=s4fFTVDDjJr7hvCL2Wg9eA&s=09"
+								>
+									<i
+										class="fa-brands fa-twitter hover:text-fuchsia text-2xl"
+									></i>
+								</a>
+								<a
+									href="https://www.linkedin.com/in/tamarapreye-michael-313877149"
+								>
+									<i
+										class="fa-brands fa-linkedin hover:text-fuchsia text-2xl"
+									></i>
+								</a>
+								<a href="https://github.com/Tamarapreye-M">
+									<i
+										class="fa-brands fa-github hover:text-fuchsia text-2xl"
+									></i>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</footer>
+		<script src="./app.js" defer></script>
 	</body>
 </html>
