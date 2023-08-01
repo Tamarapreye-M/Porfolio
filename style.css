@@ -1,3 +1,26 @@
+:root {
+	--animate-duration: 0.7s !important;
+	--animate-delay: 0.8s !important;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	scroll-snap-type: mandatory;
+}
+body::-webkit-scrollbar {
+	width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+	/* outline: 1px solid slategrey; */
+}
+
 header {
 	background-image: linear-gradient(
 			rgb(64 64 64 / 0),
@@ -8,7 +31,26 @@ header {
 	background-position: right;
 	background-repeat: no-repeat;
 	background-size: cover;
+	/* background-attachment: fixed; */
 	height: 100vh;
+}
+/* .nav {
+	backdrop-filter: blur(1rem);
+} */
+/* mynav {
+	backdrop-filter: blur(1rem);
+} */
+.hidden {
+	visibility: hidden;
+}
+.show {
+	visibility: visible;
+}
+.hide {
+	display: none !important;
+}
+.block {
+	display: block;
 }
 #text-box-head {
 	height: 80%;
@@ -31,7 +73,18 @@ header {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
 	height: auto;
+}
+
+.project-card {
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+		rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+		rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	/* box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+		rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px; */
 }
 nav {
 	display: flex;
@@ -57,4 +110,3 @@ nav ul li a:active {
 	color: #ff00c8;
 	font-weight: bold;
 }
-
